@@ -1,4 +1,4 @@
 # html5-goban
--html5
--websockets
--bootstrap
+1. HTML5
+2. websockets
+3. bootstrap
