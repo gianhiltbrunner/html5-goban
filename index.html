@@ -1,5 +1,5 @@
 <aside draggable="true" id="black" class="black 1" data-item="0"></aside>
-<aside draggable="true" id="white" class="white 2" data-item="1"></aside>
+<aside draggable="true" id="white" class="white 1" data-item="1"></aside>
 
 <img id="board" name="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
@@ -30,7 +30,8 @@
 <script>
   for (i = 2; i < 80; i++) {
     var elem = document.createElement('aside');
-    elem.setAttribute('class', 'black 1');
+    var blackx = "black ".concat(i); 
+    elem.setAttribute('class', blackx);
     elem.setAttribute('draggable', 'true');
     elem.setAttribute('data-item', i);
     
