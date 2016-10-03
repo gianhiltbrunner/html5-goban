@@ -38,6 +38,7 @@
     var elem = document.createElement('aside');
     var blackx = "black ".concat(i); 
     elem.setAttribute('class', blackx);
+    elem.setAttribute('id', i);
     var locb = "left: 2200px; top: ".concat(b).concat("px;"); 
     elem.setAttribute('style', locb)
     elem.setAttribute('draggable', 'true');
@@ -50,6 +51,7 @@
     var elemw = document.createElement('aside');
     var whitex = "white ".concat(i+200); 
     elemw.setAttribute('class', whitex);
+    elemw.setAttribute('id', i+200);
     var locw = "left: 2600px; top: ".concat(b).concat("px;"); 
     elemw.setAttribute('style', locw)
     elemw.setAttribute('draggable', 'true');
