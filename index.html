@@ -1,9 +1,5 @@
 <aside draggable="true" class="black 1" data-item="0"></aside>
 <aside draggable="true" class="white 2" data-item="1"></aside>
-<aside draggable="true" class="black 1" data-item="2"></aside>
-<aside draggable="true" class="white 2" data-item="3"></aside>
-<aside draggable="true" class="black 1" data-item="4"></aside>
-<aside draggable="true" class="white 2" data-item="5"></aside>
 
 <img id="board" name="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
@@ -32,6 +28,11 @@
 </style>
 
 <script>
+  for (i = 0; i < 80; i++) {
+    var div = document.createElement('DIV');
+    div.innerHTML = '<aside draggable="true" class="black 1" data-item="0"></aside>'
+  }
+  
   function drag_start(event) {
       var style = window.getComputedStyle(event.target, null);
       event.dataTransfer.setData("text/plain", (parseInt(style.getPropertyValue("left"), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - event.clientY) + ',' + event.target.getAttribute('data-item'));
