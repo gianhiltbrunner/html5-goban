@@ -15,12 +15,12 @@
 }
  .black {
    top: 20;
-   left: 1900;
+   left: 2200;
    background: black;
   }
  .white {
    top: 20;
-   left: 20;
+   left: 2400;
    background: white;
   }
   
@@ -33,7 +33,7 @@
     var blackx = "black ".concat(i); 
     elem.setAttribute('class', blackx);
     var b = i * 35;
-    var locb = "left: ".concat(b).concat("px; top: 100px;"); 
+    var locb = "left: 2200px; top: ").concat(b).concat("px;"); 
     elem.setAttribute('style', locb)
     elem.setAttribute('draggable', 'true');
     elem.setAttribute('data-item', i);
