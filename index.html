@@ -32,11 +32,12 @@
 </style>
 
 <script>
-  for (i = 2; i < 80; i++) {
+  for (i = 0; i < 80; i++) {
+    var b = i * 35;
+    
     var elem = document.createElement('aside');
     var blackx = "black ".concat(i); 
     elem.setAttribute('class', blackx);
-    var b = i * 35;
     var locb = "left: 2200px; top: ".concat(b).concat("px;"); 
     elem.setAttribute('style', locb)
     elem.setAttribute('draggable', 'true');
@@ -52,7 +53,7 @@
     var locw = "left: 2600px; top: ".concat(b).concat("px;"); 
     elemw.setAttribute('style', locw)
     elemw.setAttribute('draggable', 'true');
-    elemw.setAttribute('data-item', i);
+    elemw.setAttribute('data-item', 200 + i);
     
     var currentw = document.getElementById("white"); 
     document.body.insertBefore(elemw, currentw); 
