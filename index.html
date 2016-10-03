@@ -37,6 +37,15 @@
     
     var current = document.getElementById("black"); 
     document.body.insertBefore(elem, current); 
+
+    var elem = document.createElement('aside');
+    var whitex = "white ".concat(i); 
+    elem.setAttribute('class', whitex);
+    elem.setAttribute('draggable', 'true');
+    elem.setAttribute('data-item', i);
+    
+    var current = document.getElementById("white"); 
+    document.body.insertBefore(elem, current); 
   }
   
   function drag_start(event) {
