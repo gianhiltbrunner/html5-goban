@@ -2,7 +2,7 @@
 <aside draggable="true" class="dragme 2" data-item="1">T</aside>
 <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Realistic_Go_Stone.svg" class="dragme 3" height="42" width="42"> 
 
-<img id="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
+<img id="board" name="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
 <style>
   aside { 
@@ -15,7 +15,7 @@
     border: 2px  solid rgba(0,0,0,0.5); 
     border-radius: 4px; padding: 8px;
 }
-   img:not(board) { 
+   img:not([name=board]){ 
     position:  absolute;
     left: 0;
     top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
