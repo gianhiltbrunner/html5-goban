@@ -28,9 +28,11 @@
 </style>
 
 <script>
-  for (i = 0; i < 80; i++) {
+  for (i = 2; i < 80; i++) {
     var elem = document.createElement('aside');
-    elem.innerHTML = '<aside draggable="true" class="black 1" data-item="0"></aside>'
+    elem.setAttribute('class', 'black 1');
+    elem.setAttribute('draggable', 'true');
+    elem.setAttribute('data-item', i);
   }
   
   function drag_start(event) {
