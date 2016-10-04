@@ -36,7 +36,7 @@
 </style>
 
 <script>
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < 20; i++) {
     var b = i * 80;
     
     var elem = document.createElement('aside');
@@ -51,6 +51,7 @@
     var current = document.getElementById("blackgoke"); 
     document.body.insertBefore(elem, current); 
 
+    i=i+1
     
     var elemw = document.createElement('aside');
     var whitex = "stone ".concat(i); 
