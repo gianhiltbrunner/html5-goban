@@ -35,8 +35,8 @@
 </style>
 
 <script>
-  for (i = 0; i < 20; i++) {
-    var b = i * 80;
+  for (i = 0; i < 181; i++) {
+    var b = 200;//offset
     
     var elem = document.createElement('aside');
     var blackx = "stone ".concat(i); 
@@ -51,8 +51,8 @@
     document.body.insertBefore(elem, current); 
 
   }
-  for (i = 20; i < 40; i++) {
-    var b = (i-20) * 80;
+  for (i = 181; i < 360; i++) {
+    var b = 200;//offset
     
     var elemw = document.createElement('aside');
     var whitex = "stone ".concat(i); 
@@ -83,6 +83,11 @@ function drop(event) {
 	dm[parseInt(offset[2])].style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
 	dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
 	event.preventDefault();
+	
+	move(dm[parseInt(offset[2])].id);
+	move(dm[parseInt(offset[2])].style.left);	
+	move(dm[parseInt(offset[2])].style.top);
+
 	return false;
 }
 
@@ -92,4 +97,12 @@ for (var i = 0; i < dm.length; i++) {
 	document.body.addEventListener('dragover', drag_over, false);
 	document.body.addEventListener('drop', drop, false);
 }
+</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  function move(dm){
+  	socket.emit('move', dm);
+  }
 </script>
