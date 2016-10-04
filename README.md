@@ -4,3 +4,6 @@
 3. bootstrap
 
 REQUIRES! express nodejs and socket.io
+
+Start with "node index"
+http://localhost:3000/
