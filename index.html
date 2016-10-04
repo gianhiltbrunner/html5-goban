@@ -84,9 +84,7 @@ function drop(event) {
 	dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
 	event.preventDefault();
 	
-	move(dm[parseInt(offset[2])].id);
-	move(dm[parseInt(offset[2])].style.left);	
-	move(dm[parseInt(offset[2])].style.top);
+	move(dm[parseInt(offset[2])].id + " " + dm[parseInt(offset[2])].style.left + " " + dm[parseInt(offset[2])].style.top);
 
 	return false;
 }
@@ -111,7 +109,12 @@ for (var i = 0; i < dm.length; i++) {
 //get moves from server
 
 socket.on('move', function(msg){
+	var msgarray = msg.split(" "); 
 	console.log(msg);
+
+	var elementStyle = document.getElementById(msgarray[0]).style;
+	elementStyle.left = msgarray[1];
+	elementStyle.top = msgarray[2];
 });
 
 </script>
