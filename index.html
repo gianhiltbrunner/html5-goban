@@ -1,5 +1,8 @@
-<aside draggable="true" id="black" class="black 1" data-item="0"></aside>
-<aside draggable="true" id="white" class="white 1" data-item="1"></aside>
+<!--<aside draggable="true" id="black" class="black 1" data-item="0"></aside>
+<aside draggable="true" id="white" class="white 1" data-item="1"></aside>-->
+
+<aside id="blackgoke" class="goke 1" data-item="400"></aside>
+<aside id="whitegoke" class="goke 1" data-item="401"></aside>
 
 <img id="board" name="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
@@ -14,13 +17,13 @@
     -moz-border-radius:200px;
 }
  .black {
-   top: 20;
-   left: 2200;
+   /*top: 20;
+   left: 2200;*/
    background: black;
   }
  .white {
-   top: 20;
-   left: 2600;
+   /*top: 20;
+   left: 2600;*/
    background: white;
   }
   body {
@@ -42,7 +45,7 @@
     elem.setAttribute('draggable', 'true');
     elem.setAttribute('data-item', i);
     
-    var current = document.getElementById("black"); 
+    var current = document.getElementById("blackgoke"); 
     document.body.insertBefore(elem, current); 
 
     
@@ -55,7 +58,7 @@
     elemw.setAttribute('draggable', 'true');
     elemw.setAttribute('data-item', 200 + i);
     
-    var currentw = document.getElementById("white"); 
+    var currentw = document.getElementById("whitegoke"); 
     document.body.insertBefore(elemw, currentw);
   }
   
