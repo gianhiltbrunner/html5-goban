@@ -75,7 +75,7 @@
   } 
   function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
-    var dm = .getElementsByClassName('stone');
+    var dm = document.getElementsByClassName('stone');
     dm[parseInt(offset[2])].style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     event.preventDefault();
