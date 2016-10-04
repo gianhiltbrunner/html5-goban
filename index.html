@@ -1,7 +1,6 @@
 <aside draggable="true" id="black" class="black 1" data-item="0"></aside>
 <aside draggable="true" id="white" class="white 1" data-item="1"></aside>
 
-
 <img id="board" name="board" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
 <style>
@@ -51,7 +50,7 @@
     var whitex = "white ".concat(i+200); 
     elemw.setAttribute('class', whitex);
     elemw.setAttribute('id', i+200);
-    var locw = "left: 2600px; top: ".concat(b).concat("px;"); 
+    var locw = "left: 400px; top: ".concat(b).concat("px;"); 
     elemw.setAttribute('style', locw)
     elemw.setAttribute('draggable', 'true');
     elemw.setAttribute('data-item', 200 + i);
