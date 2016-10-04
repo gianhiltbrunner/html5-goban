@@ -53,13 +53,13 @@
 
     
     var elemw = document.createElement('aside');
-    var whitex = "stone ".concat(i+200); 
+    var whitex = "stone ".concat(i); 
     elemw.setAttribute('class', whitex);
-    elemw.setAttribute('id', i+200);
+    elemw.setAttribute('id', i);
     var locw = "background-color:white;left: 1000px; top: ".concat(b).concat("px;"); 
     elemw.setAttribute('style', locw)
     elemw.setAttribute('draggable', 'true');
-    elemw.setAttribute('data-item', 200 + i);
+    elemw.setAttribute('data-item', i);
     
     var currentw = document.getElementById("whitegoke"); 
     document.body.insertBefore(elemw, currentw);
