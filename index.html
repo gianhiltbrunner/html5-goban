@@ -72,13 +72,13 @@
   } 
   function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
-    var dm = document.querySelectorAll('.black,.white')
+    var dm = document.querySelectorAll('.black, .white')
     dm[parseInt(offset[2])].style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     event.preventDefault();
     return false;
   }
-  var dm = document.querySelectorAll('.black,.white')
+  var dm = document.querySelectorAll('.black, .white')
   for (var i = 0; i < dm.length; i++) {
     dm[i].addEventListener('dragstart', drag_start, false);
     document.body.addEventListener('dragover', drag_over, false);
