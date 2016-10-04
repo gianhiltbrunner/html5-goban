@@ -6,6 +6,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/goban', function(req, res){
+	res.sendFile(__dirname + '/goban.html');
+});
+
 io.on('connection', function(socket){
   socket.on('move', function(msg){
     io.emit('move', msg);
