@@ -5,8 +5,6 @@
 
 <img id="board" name="board" width="1000px" height="1000px" src="https://raw.githubusercontent.com/protelescristata/html5-goban/master/assets/Blank_Go_board.png"/>
 
-<input type="text" id="gameid" value="">
-
 <style>
   aside { 
     position: absolute;
@@ -46,6 +44,25 @@
 </style>
 
 <script>
+	var gameid = 0;
+	
+	function GetURLParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++)
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam)
+	        {
+	            return sParameterName[1];
+	        }
+	    }
+	}
+	 var urlid = GetURLParameter('id');
+	 if(urlid != null){
+	 	gameid = urlid;
+	 }
   for (i = 0; i < 181; i++) {
     var b = 100;//offset
     
@@ -95,7 +112,7 @@ function drop(event) {
 	dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
 	event.preventDefault();
 	
-	move(dm[parseInt(offset[2])].id + " " + dm[parseInt(offset[2])].style.left + " " + dm[parseInt(offset[2])].style.top + " " + gameid.value);//send move
+	move(dm[parseInt(offset[2])].id + " " + dm[parseInt(offset[2])].style.left + " " + dm[parseInt(offset[2])].style.top + " " + gameid);//send move
 
 	return false;
 }
@@ -106,6 +123,16 @@ for (var i = 0; i < dm.length; i++) {
 	document.body.addEventListener('dragover', drag_over, false);
 	document.body.addEventListener('drop', drop, false);
 }
+function randomString(length, chars) {
+    var result = '';
+    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+    return result;
+}
+if(gameid == 0){
+	gameid = randomString(6, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+}
+document.write(gameid);
+
 </script>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -122,7 +149,7 @@ for (var i = 0; i < dm.length; i++) {
 socket.on('move', function(msg){
 	var msgarray = msg.split(" "); 
 	console.log(msg);
-	if(gameid.value == msgarray[3]){
+	if(gameid == msgarray[3]){
 		var elementStyle = document.getElementById(msgarray[0]).style;
 		elementStyle.left = msgarray[1];
 		elementStyle.top = msgarray[2];
